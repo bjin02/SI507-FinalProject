@@ -47,7 +47,7 @@ TODO
 		    Location (VARCHAR up to 255 chars)
 		    Description (TEXT)
 	
-		**States**
+	  **States**
 	
 		    ID (SERIAL)
 		    Name (VARCHAR up to 40 chars, UNIQUE)
