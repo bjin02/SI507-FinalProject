@@ -1,6 +1,9 @@
 # README
+# National Park Data Visualization 
 ## Project Intro
-#### This is a Final Project that includes most of the concepts covered in F17 SI 507. This project will run the code to grab the data from online website, process the data to store in Database and then Visualize the data. The code is fully tested with unit test.
+#### This is a Final Project that includes most of the concepts covered in F17 SI 507. This project will run the code to grab the US National Park data from online website, process the data to store in Database and then Visualize the data with the Plotly Dashboard API. The code is fully tested with unit test.
+
+#### This Project is aiming to provide Visualized Data for US National Parks among the States.
 
 ## Instructions - How to Run the Code
 TODO
@@ -13,32 +16,51 @@ TODO
     - Initial README file
     - initial python files like:
 		SI507F17_finalproject.py and the  SI507F17_finalproject_tests.py file
+		finalproject.py will cover the data models, cache system, website data scraping system and the database connection utilization system.
+		tests.py will cover all required unit tests.
 	- A requirements.txt file from your virtual environment
-	- Any .py or other file templates that we have to fill in. e.g. secret_data.py
+	- Any .py or other file templates that we have to fill in. e.g. secret_data.py for the webiste API call credentials, .csv files for local caching etc.
 
 
 ### Part 2: Get data from least one complex source, in a way you have learned this semester, with caching.
 
-- Part 0: Scraping with BeautifulSoup from website
-- Part 1: Setup a caching system and it must be at least as complex as e.g. the one in the textbook
-	- It’s OK to borrow heavily (but should cite in your README code you borrow) from the textbook, code from class, etc, just make sure it all works for your code in your project
+- Part 0: Scraping with BeautifulSoup from National Park websites, process the BeautifulSoup to grab the required National Park data.
+- Part 1: Store the website data into files and setup a local file based caching system and it can support cache data expire.
 
 ### Part 3: Implementing the classes, functions, models and Connecting to Database
 
-- Part 0: Implement at least 1 class definition
-	- The class should include a __repr__ method and a __contains__ method
-- Part 1: Use this class definition for anything useful in your program
-	- using it to process the data you gather and storing them in database tables, or using it to process data that results from querying your database
-- Part 2: Connect to the database and get in at least 2 different database tables
-  - Set up at least 2 database tables in a database, and write code to store data in them. 
-  - Each database table have a least 2 columns and end up containing at least 4 rows of data.
-  - The tables you create have at least 1 relationship existing between them, e.g. so you could make a reasonable JOIN query on the two tables.
-  - Have more than two tables if you want, and you may make the database structure more complex.
+- Part 0: Implement the National Park class to model the data
+	- The class should include a __repr__ method that can descripe the National Park data
+	- And a __contains__ method to check if the National Park data contains required location information
+- Part 1: Use this class definition for database models in your program
+	- Process the BeautifulSoup data to model the National Park data into instances of the classes
+- Part 2: Connect to the database and get Sites and States database tables data
+  - Set up Sites and States database tables in a database, and store the scraped data instances in them. 
+  - Database table data with these columns in each:
+  
+	  **Sites**
+	  
+		    ID (SERIAL)
+		    Name (VARCHAR up to 128 chars, UNIQUE)
+		    Type [e.g. "National Lakeshore" or "National Park"] (VARCHAR up to 128 chars)
+		    State_ID (INTEGER - FOREIGN KEY REFERENCING States)
+		    Location (VARCHAR up to 255 chars)
+		    Description (TEXT)
+	
+		**States**
+	
+		    ID (SERIAL)
+		    Name (VARCHAR up to 40 chars, UNIQUE)
+	    
+  - Sites table has the external key to the States table. We can make JOIN query to these tables
+  - Setup the DB connection code to Connect, Insert, Update and Query the tables
   
 
 ### Part 4: Include a full test suite for your project.
-- Part 0: You must have at least 15 test methods and at least 2 subclasses of unittest.TestCase which should have good test coverage of the project
-	-  Use at least one setUp method (e.g. if you need to create instances to test, open files to test…), and a tearDown method if it is useful
+- Part 0: Implement the unit test class with unittest.TestCase which should have good test coverage of the project
+	-  Test as much as possible to provide good code quality
 
-### Part 4: Include some visual representation of your data that is clear
-- Part 0: Learn and use the library Plotly, which has a pretty clear Python API I highly recommend! It creates nice charts and graphs. https://plot.ly/python/
+### Part 5: Include some visual representation of your data that is clear
+- Part 0: Learn and use the library Plotly, which has a pretty clear Python API to create nice charts and graphs. https://plot.ly/python/
+- Part 1: Onboard the Plotly Dashboard API to visualize the National Park data in result of a dashboard that reflects the numbers of National Parks in different States, 
+Comparison of different National Parks and even Pointing out the National Parks in a US Map.
