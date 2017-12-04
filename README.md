@@ -1,9 +1,9 @@
 # README
-# National Park Data Visualization 
+# Tumblr Posts Data Visualization 
 ## Project Intro
 #### This is a Final Project that includes most of the concepts covered in F17 SI 507. This project will run the code to grab the US National Park data from online website, process the data to store in Database and then Visualize the data with the Plotly Dashboard API. The code is fully tested with unit test.
 
-#### This Project is aiming to provide Visualized Data for US National Parks among the States.
+#### This Project is aiming to provide Visualized Data for Post among the Tumblr Bloggers.
 
 ## Instructions - How to Run the Code
 TODO
@@ -24,35 +24,42 @@ TODO
 
 ### Part 2: Get data from least one complex source, in a way you have learned this semester, with caching.
 
-- Part 0: Scraping with BeautifulSoup from National Park websites, process the BeautifulSoup to grab the required National Park data.
-- Part 1: Store the website data into files and setup a local file based caching system and it can support cache data expire.
+- Part 0: Get Tumblr Post data from Tumblr websites, process the data to grab the required fields to generate the Post data class instances.
+- Part 1: Store the raw data into files and setup a local file based caching system and it can support cache data expire.
 
 ### Part 3: Implementing the classes, functions, models and Connecting to Database
 
-- Part 0: Implement the National Park class to model the data
+- Part 0: Implement the Info, Post data class to model the data
 	- The class should include a __repr__ method that can descripe the National Park data
 	- And a __contains__ method to check if the National Park data contains required location information
 - Part 1: Use this class definition for database models in your program
-	- Process the BeautifulSoup data to model the National Park data into instances of the classes
-- Part 2: Connect to the database and get Sites and States database tables data
-  - Set up Sites and States database tables in a database, and store the scraped data instances in them. 
+	- Process the raw data to model the Post data into instances of the classes
+- Part 2: Connect to the database and get Info and Post database tables data
+  - Set up Info and Post database tables in a database, and store the data instances in them. 
   - Database table data with these columns in each:
   
-	  **Sites**
-	  
-		    ID (SERIAL)
-		    Name (VARCHAR up to 128 chars, UNIQUE)
-		    Type [e.g. "National Lakeshore" or "National Park"] (VARCHAR up to 128 chars)
-		    State_ID (INTEGER - FOREIGN KEY REFERENCING States)
-		    Location (VARCHAR up to 255 chars)
-		    Description (TEXT)
+	  **Info**
+	  	    id
+		    followed
+		    likes
+		    total_posts	title
+		    url
+		    ask_page_title
+		    name
 	
-	  **States**
+	  **Post**
 	
-		    ID (SERIAL)
-		    Name (VARCHAR up to 40 chars, UNIQUE)
+		    id
+		    date
+		    summary
+		    format
+		    short_url
+		    can_like
+		    can_reply
+		    type
+		    info_id
 	    
-  - Sites table has the external key to the States table. We can make JOIN query to these tables
+  - Post table has the external key to the Info table. We can make JOIN query to these tables
   - Setup the DB connection code to Connect, Insert, Update and Query the tables
   
 
@@ -62,5 +69,4 @@ TODO
 
 ### Part 5: Include some visual representation of your data that is clear
 - Part 0: Learn and use the library Plotly, which has a pretty clear Python API to create nice charts and graphs. https://plot.ly/python/
-- Part 1: Onboard the Plotly Dashboard API to visualize the National Park data in result of a dashboard that reflects the numbers of National Parks in different States, 
-Comparison of different National Parks and even Pointing out the National Parks in a US Map.
+- Part 1: Onboard the Plotly Dashboard API to visualize the Tumblr Post data in result of a dashboard that reflects the numbers of Posts in Bloggers, comparison of different Posts/Blogger Info.
