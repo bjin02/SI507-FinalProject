@@ -24,7 +24,7 @@ TODO
 
 ### Part 2: Get data from least one complex source, in a way you have learned this semester, with caching.
 
-- Part 0: Get Tumblr Post data from Tumblr websites, process the data to grab the required fields to generate the Post data class instances.
+- Part 0: Get Tumblr Post data from Tumblr websites via OAuth authentication, process the data to grab the required fields to generate the Post/Info data class instances.
 - Part 1: Store the raw data into files and setup a local file based caching system and it can support cache data expire.
 
 ### Part 3: Implementing the classes, functions, models and Connecting to Database
