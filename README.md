@@ -30,8 +30,8 @@ TODO
 ### Part 3: Implementing the classes, functions, models and Connecting to Database
 
 - Part 0: Implement the Info, Post data class to model the data
-	- The class should include a __repr__ method that can descripe the National Park data
-	- And a __contains__ method to check if the National Park data contains required location information
+	- The class should include a __repr__ method that can descripe the Post/Info data
+	- And a __contains__ method to check if the Post data contains some words in Summary 
 - Part 1: Use this class definition for database models in your program
 	- Process the raw data to model the Post data into instances of the classes
 - Part 2: Connect to the database and get Info and Post database tables data
@@ -39,6 +39,7 @@ TODO
   - Database table data with these columns in each:
   
 	  **Info**
+	  
 	  	    id
 		    followed
 		    likes
