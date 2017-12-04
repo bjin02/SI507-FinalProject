@@ -1,7 +1,7 @@
 # README
 # Tumblr Posts Data Visualization 
 ## Project Intro
-#### This is a Final Project that includes most of the concepts covered in F17 SI 507. This project will run the code to grab the US National Park data from online website, process the data to store in Database and then Visualize the data with the Plotly Dashboard API. The code is fully tested with unit test.
+#### This is a Final Project that includes most of the concepts covered in F17 SI 507. This project will run the code to grab the Post data from Tumblr website, process the data to store in Database and then Visualize the data with the Plotly Dashboard API. The code is fully tested with unit test.
 
 #### This Project is aiming to provide Visualized Data for Post among the Tumblr Bloggers.
 
