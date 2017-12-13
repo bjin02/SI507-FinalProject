@@ -7,7 +7,7 @@
 
 ## Instructions - How to Run the Code
  1. Pip install the required pkgs from the requirements.txt
- 2. In the command line, run the python SI507F17_finalproject.py to run the main application. Note: if you see errors like the SSL certify verify failed. Please run the /Applications/Python 3.6/Install Certificates.command to update since Python 3.6 on MacOS uses an embedded version of OpenSSL, which does not use the system certificate store
+ 2. In the command line, run the **python SI507F17_finalproject.py** to run the main application. Note: if you see errors like the SSL certify verify failed. Please run the /Applications/Python 3.6/Install Certificates.command to update since Python 3.6 on MacOS uses an embedded version of OpenSSL, which does not use the system certificate store
  3. You are supposed to run at Python3 and please fill in the ***CLIENT_KEY, CLIENT_SECRET*** in the secret_data.py in order to run the code. These KEY, SECRETS can be found in the Canvas upload files
  4. After you run this, you are supposed to see the temp-plot.html file Representing the Chart of the data analysis for all posts https://ibb.co/dwa8C6, the bei_posts.gif Representing the Images of all posts by Vinbeigie https://ibb.co/g9AuKm  and interior_posts.gif Representing the Images of all posts by Interior https://ibb.co/cvJQQR
  5. When Code in runned, the Tumblr Blog Info/Posts API  via Oauth requests and Cache functions are called to grab the data either from online or locally. You will see the output: Loading from data cache....if the cache is hit.
@@ -17,8 +17,9 @@ Setup database complete in the output. Note: The DB table name is ***FinalProjec
  8.  After successfully inserting the data to DB, you will see lots of Success connecting to database in the output. And there is some DB query functions running to grab the data from DB for Data Analysis. There is also JOIN query for the two tables: *Info* and *Post*.
  9. After getting these query data, plotly function is running to generate the chart html file. You can see the output in the ***temp-plot.html*** file. 
  10. There is another Gif file generation function running to generate the Gif files(***bei_posts.gif*** and ***interior_posts.gif***) to Visualize all the images in the Posts by Vinbeigie and Interior.
- 11. Links to the resources: plotly https://plot.ly/python/offline/, imageio https://imageio.github.io/
- 12. Citation of the code example borrowed from class: oauth1_twitter_caching.py
+ 11. Running the Test file, **python SI507F17_finalproject_tests.py** and you will see all tests passed.
+ 12. Links to the resources: plotly https://plot.ly/python/offline/, imageio https://imageio.github.io/
+ 13. Citation of the code example borrowed from class: oauth1_twitter_caching.py
 in Lecture 11.
 
 # Final Project - Bei Jin
